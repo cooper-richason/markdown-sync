@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "markdown_sync"
+  site-url: "https://cooper-richason.github.io/markdown-sync"
+  description: "Sync Obsidian Notes to Quarto Website"
+  repo-branch: main
+  repo-url: "https://github.com/cooper-richason/markdown-sync"

@@ -1,0 +1,12 @@
+---
+title: Huggingface Course
+description: Notes on Huggingface Course
+metadata-files:
+- ../../_listing_meta.yml
+listing:
+  contents:
+  - /*.ipynb
+  - /*.qmd
+  - /*/index.qmd
+margin-footer: <br>
+---

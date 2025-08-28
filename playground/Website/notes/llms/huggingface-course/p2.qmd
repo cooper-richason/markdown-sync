@@ -1,0 +1,11 @@
+---
+title: Unit 1 - My Notes
+author: Cooper Richason
+date: '2025-08-28'
+date-modified: '2025-08-28'
+categories: null
+draft: true
+TOC: true
+---
+
+Yo Yo

@@ -1,0 +1,4 @@
+fastcore
+rich
+appdirs
+nbdev
