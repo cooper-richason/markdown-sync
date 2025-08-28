@@ -72,7 +72,7 @@ def find_sync_pair_for_cwd() -> Optional[Tuple[str, str, str]]:
 def list_configured_pairs():
     """Display all configured sync pairs"""
     config = load_config()
-    
+    print(config)
     if not config:
         console.print("❌ No sync pairs configured. Use 'markdown_sync add' to add one.")
         return
