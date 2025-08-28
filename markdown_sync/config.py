@@ -32,7 +32,7 @@ def save_config(config):
 
 
 
-# %% ../nbs/API/config.ipynb 13
+# %% ../nbs/API/config.ipynb 12
 def get_setting(key, default=None):
     """Get a specific setting"""
     config = load_config()
