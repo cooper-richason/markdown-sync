@@ -84,6 +84,7 @@ def list_configured_pairs():
     table.add_column("Status", style="white")
     
     for obsidian_path, settings in config.items():
+        if obsidian_path in ('quarto-path','obsidian-path','author'): continue
         quarto_path = settings['quarto-path']
         author = settings.get('author', 'Not set')
         
