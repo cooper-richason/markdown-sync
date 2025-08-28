@@ -85,7 +85,12 @@ def list_configured_pairs():
     
     for obsidian_path, settings in config.items():
         if obsidian_path in ('quarto-path','obsidian-path','author'): continue
-        quarto_path = settings['quarto-path']
+        
+        try:
+            quarto_path = settings['quarto-path']
+        except Exception as e:
+            continue
+        
         author = settings.get('author', 'Not set')
         
         # Check if paths exist
