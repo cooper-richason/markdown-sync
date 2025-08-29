@@ -1,0 +1,97 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "markdown-sync",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation.",
+    "crumbs": [
+      "markdown-sync"
+    ]
+  },
+  {
+    "objectID": "index.html#developer-guide",
+    "href": "index.html#developer-guide",
+    "title": "markdown-sync",
+    "section": "Developer Guide",
+    "text": "Developer Guide\nIf you are new to using nbdev here are some useful pointers to get you started.\n\nInstall note_sync in Development mode\n# make sure note_sync package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to note_sync\n$ nbdev_prepare",
+    "crumbs": [
+      "markdown-sync"
+    ]
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "markdown-sync",
+    "section": "Usage",
+    "text": "Usage\n\nInstallation\nInstall latest from the GitHub repository:\n$ pip install git+https://github.com/cooper-richason/markdown-sync.git\nor from conda\n$ conda install -c cooper-richason note_sync\nor from pypi\n$ pip install note_sync\n\n\nDocumentation\nDocumentation can be found hosted on this GitHub repository’s pages. Additionally you can find package manager specific guidelines on conda and pypi respectively.",
+    "crumbs": [
+      "markdown-sync"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "markdown-sync",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2",
+    "crumbs": [
+      "markdown-sync"
+    ]
+  },
+  {
+    "objectID": "API/main.html",
+    "href": "API/main.html",
+    "title": "Main",
+    "section": "",
+    "text": "source\n\nFileMeta\n\n FileMeta (size:int, mtime:float, hash:Optional[str]=None)\n\n\nsource\n\n\nshould_ignore\n\n should_ignore (p:pathlib.Path, ignore_globs:Iterable[str])\n\n\nsource\n\n\nfile_hash\n\n file_hash (path:pathlib.Path, algo:str='md5')\n\n\nsource\n\n\nrel_key\n\n rel_key (root:pathlib.Path, p:pathlib.Path)\n\n\nsource\n\n\nmake_quarto\n\n make_quarto (path:str, yaml_data:Dict[str,Any], text_data:str=None,\n              update_dates=True)\n\nMake a Quarto (.qmd) document with YAML metadata and text content.\n\nsource\n\n\ncreate_frontmatter\n\n create_frontmatter (title:str, author:str='Author', date:str=None,\n                     date_modified:str=None, categories:List[str]=None,\n                     draft:bool=False, **kwargs)\n\n\nsource\n\n\nparse_quarto\n\n parse_quarto (path:str)\n\nParse a Quarto document and extract YAML frontmatter and markdown content.\n\nsource\n\n\nobsidian_to_quarto_transform\n\n obsidian_to_quarto_transform (src_path:pathlib.Path,\n                               dst_root:pathlib.Path,\n                               sync_root:pathlib.Path)\n\nTransform function that converts .md files to .qmd files with proper frontmatter.\n\nsource\n\n\nmd_content_changed\n\n md_content_changed (md_path:pathlib.Path, qmd_path:pathlib.Path)\n\nCheck if the markdown content has changed between .md and .qmd files.\n\nsource\n\n\ncreate_index_qmd\n\n create_index_qmd (dir_path:pathlib.Path, quarto_root:pathlib.Path)\n\nCreate an index.qmd file for a directory.\n\nsource\n\n\ncheck_listing_metadata\n\n check_listing_metadata (sync_root:pathlib.Path)\n\n*Check if there’s a _listing_meta.yml file in the sync directory.*\n\nsource\n\n\nfilename_to_title\n\n filename_to_title (filename:str)\n\nConvert filename to a readable title.\n\nsource\n\n\nread_markdown_content\n\n read_markdown_content (md_path:pathlib.Path)\n\nRead markdown content from an .md file.\n\nsource\n\n\nsync_obsidian_to_quarto\n\n sync_obsidian_to_quarto (obsidian_root:str|pathlib.Path,\n                          quarto_root:str|pathlib.Path, dry_run:bool=True,\n                          ignore:Iterable[str]=('*.DS_Store', 'Thumbs.db',\n                          '.obsidian', '*.tmp'))\n\n*Sync Obsidian .md files to Quarto .qmd files.\nArgs: obsidian_root: Path to Obsidian vault or folder with .md files quarto_root: Path to Quarto project destination dry_run: If True, only show what would be done without making changes ignore: Glob patterns to ignore during sync*\n\nif __name__ == \"__main__\":\n    # Example usage\n    obsidian_path = \"/Users/rehabpath/Local_Projects/note-sync/playground/Obsidian/notes-folder\"\n    quarto_path = \"/Users/rehabpath/Local_Projects/note-sync/playground/Website/notes\"\n    \n    # Dry run first to see what would happen\n    sync_obsidian_to_quarto(obsidian_path, quarto_path,dry_run=False)\n    \n    # Uncomment to actually perform the sync\n    # sync_obsidian_to_quarto(obsidian_path, quarto_path, dry_run=False)\n\nSyncing from Obsidian/notes-folder/ to Website/notes/\n--------------------------------------------------\nFound listing metadata file: _listing_meta.yml\nSKIP FILE: agents/huggingface-course/Unit 1 - Introduction.qmd (no changes)",
+    "crumbs": [
+      "API",
+      "Main"
+    ]
+  },
+  {
+    "objectID": "API/cli.html",
+    "href": "API/cli.html",
+    "title": "CLI",
+    "section": "",
+    "text": "source\n\nlist_configured_pairs\n\n list_configured_pairs ()\n\nDisplay all configured sync pairs\n\nsource\n\n\nfind_sync_pair_for_cwd\n\n find_sync_pair_for_cwd ()\n\nCheck if current working directory matches any configured obsidian or quarto paths. Returns (obsidian_path, quarto_path, author) if found, None otherwise.\n\nsource\n\n\nvalidate_path\n\n validate_path (path_str:str, must_exist:bool=True, must_be_dir:bool=True)\n\nValidate and return Path object\n\nsource\n\n\nadd\n\n add (obsidian_path:str=None, quarto_path:str=None, author:str=None,\n      non_interactive:bool=False)\n\nAdd a new Obsidian to Quarto sync pair\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nobsidian_path\nstr\nNone\nAbsolute path to Obsidian folder\n\n\nquarto_path\nstr\nNone\nAbsolute path to Quarto folder\n\n\nauthor\nstr\nNone\nDefault author name for new files\n\n\nnon_interactive\nbool\nFalse\nSkip prompts\n\n\n\n\nsource\n\n\nremove\n\n remove (obsidian_path:str=None, list_first:bool=False)\n\nRemove a sync pair from configuration\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nobsidian_path\nstr\nNone\nObsidian path to remove\n\n\nlist_first\nbool\nFalse\nList options first\n\n\n\n\nsource\n\n\nclear_config\n\n clear_config ()\n\nClear all sync pairs from configuration\n\nsource\n\n\nlist_pairs\n\n list_pairs ()\n\nList all configured sync pairs\n\nsource\n\n\nsync\n\n sync (obsidian_path:str=None, dry_run:bool=False, all_pairs:bool=False)\n\nSync Obsidian markdown files to Quarto\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nobsidian_path\nstr\nNone\nSpecific obsidian path to sync\n\n\ndry_run\nbool\nFalse\nShow what would be done without doing it\n\n\nall_pairs\nbool\nFalse\nSync all configured pairs\n\n\n\n\nsource\n\n\nmain\n\n main ()\n\nMain entry point that dispatches to subcommands",
+    "crumbs": [
+      "API",
+      "CLI"
+    ]
+  },
+  {
+    "objectID": "API/config.html",
+    "href": "API/config.html",
+    "title": "Config",
+    "section": "",
+    "text": "source\n\n\n\n save_config (config)\n\nSave config to file\n\nsource\n\n\n\n\n load_config ()\n\nLoad config, creating default if it doesn’t exist\nLet’s try it out! Let’s see if we can save a config:\n\nconfig = {'quarto-path':'/my/example/project/path','obsidian-path':'/path/to/my/valult'}\n\nsave_config(config)\n\nNow, let’s try reading it and see if the file is the same:\n\nt1 = load_config()\nprint(t1)\n\n{'quarto-path': '/my/example/project/path', 'obsidian-path': '/path/to/my/valult'}\n\n\n\nt1 = load_config()\nprint(t1)\n\ntest_eq(t1['obsidian-path'],config['obsidian-path'])\ntest_eq(t1['quarto-path'],config['quarto-path'])\nprint('\\nIt works!')\n\n{'quarto-path': '/my/example/project/path', 'obsidian-path': '/path/to/my/valult'}\n\nIt works!",
+    "crumbs": [
+      "API",
+      "Config"
+    ]
+  },
+  {
+    "objectID": "API/config.html#creating-reading-config",
+    "href": "API/config.html#creating-reading-config",
+    "title": "Config",
+    "section": "",
+    "text": "source\n\n\n\n save_config (config)\n\nSave config to file\n\nsource\n\n\n\n\n load_config ()\n\nLoad config, creating default if it doesn’t exist\nLet’s try it out! Let’s see if we can save a config:\n\nconfig = {'quarto-path':'/my/example/project/path','obsidian-path':'/path/to/my/valult'}\n\nsave_config(config)\n\nNow, let’s try reading it and see if the file is the same:\n\nt1 = load_config()\nprint(t1)\n\n{'quarto-path': '/my/example/project/path', 'obsidian-path': '/path/to/my/valult'}\n\n\n\nt1 = load_config()\nprint(t1)\n\ntest_eq(t1['obsidian-path'],config['obsidian-path'])\ntest_eq(t1['quarto-path'],config['quarto-path'])\nprint('\\nIt works!')\n\n{'quarto-path': '/my/example/project/path', 'obsidian-path': '/path/to/my/valult'}\n\nIt works!",
+    "crumbs": [
+      "API",
+      "Config"
+    ]
+  },
+  {
+    "objectID": "API/config.html#settingupdating-values",
+    "href": "API/config.html#settingupdating-values",
+    "title": "Config",
+    "section": "Setting/Updating Values",
+    "text": "Setting/Updating Values\n\nsource\n\nset_setting\n\n set_setting (key, value)\n\nSet a specific setting\n\nsource\n\n\nget_setting\n\n get_setting (key, default=None)\n\nGet a specific setting\nLet’s see if these work!\n\nset_setting('author','Cooper Richason')\n\n\nt2 = get_setting('author')\nprint(t2)\n\ntest_eq('Cooper Richason',t2)\nprint('It works!')\n\nCooper Richason\nIt works!\n\n\n\n# Cleaning up Tests\nct = load_config()\nct.pop('obsidian-path')\nct.pop('quarto-path')\nct.pop('author')\nsave_config(t1)",
+    "crumbs": [
+      "API",
+      "Config"
+    ]
+  }
+]
